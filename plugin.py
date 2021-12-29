@@ -260,7 +260,7 @@ class BasePlugin:
             self._getWLEDJSON()
 
     def _getWLEDJSON(self):
-        Domoticz.Log("_getWLEDJSON")
+        #Domoticz.Log("_getWLEDJSON")
         self.JSONConn = Domoticz.Connection(Name="JSONConn", Transport="TCP/IP", Protocol="HTTP", Address=ipaddress, Port="80" )
         self.JSONConn.Connect()
 
