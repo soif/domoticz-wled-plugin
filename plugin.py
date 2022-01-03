@@ -92,7 +92,8 @@ class BasePlugin:
 
         UpdatePresetsInDomoticz()
 
-        getWLEDJSON( self.JSONConn )
+        self._getWLEDJSON()
+
 
     def onStop(self):
         Domoticz.Log("onStop called")
@@ -256,7 +257,12 @@ class BasePlugin:
 
         if( self.counter > updateInterval ):
             self.counter = 1
-            getWLEDJSON( self.JSONConn )
+            self._getWLEDJSON()
+
+    def _getWLEDJSON(self):
+        #Domoticz.Log("_getWLEDJSON")
+        self.JSONConn = Domoticz.Connection(Name="JSONConn", Transport="TCP/IP", Protocol="HTTP", Address=ipaddress, Port="80" )
+        self.JSONConn.Connect()
 
 global _plugin
 _plugin = BasePlugin()
@@ -411,10 +417,7 @@ def UpdateStatusInDomoticz():
 #   Domoticz.Log( "preset:" + str(preset) )
 #   UpdateDevice(4,1,int(wledData["preset"]*10)) 
 
-def getWLEDJSON( JSONConn ):
-    #Domoticz.Log("getWLEDJSON")
-    JSONConn = Domoticz.Connection(Name="JSONConn", Transport="TCP/IP", Protocol="HTTP", Address=ipaddress, Port="80" )
-    JSONConn.Connect()
+
 
 def doWLEDRequest( parameters ):
     global ipaddress
