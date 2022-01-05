@@ -3,7 +3,7 @@
 # Author: Frustreermeneer
 #
 """
-<plugin key="WLED" name="WLED" author="frustreermeneer" version="0.0.1" wikilink="http://www.domoticz.com/wiki/plugins/plugin.html" externallink="https://github.com/frustreermeneer/domoticz-wled-plugin">
+<plugin key="WLED" name="WLED" author="frustreermeneer" version="0.0.2" wikilink="http://www.domoticz.com/wiki/plugins/plugin.html" externallink="https://github.com/frustreermeneer/domoticz-wled-plugin">
     <description>
         <h2>WLED Plugin</h2><br/>
         <h3>Features</h3>
